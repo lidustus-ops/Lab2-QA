@@ -1,0 +1,240 @@
+// Course detail page styles
+.course-detail {
+  background-color: $color-bg-light;
+  margin-bottom: 0;
+  
+  &__container {
+    @include flex(row, flex-start, stretch);
+    gap: 0;
+    max-height: calc(100vh - 120px);
+    overflow: hidden;
+    
+    @include respond-to(mobile) {
+      @include flex(column, flex-start, stretch);
+      max-height: none;
+    }
+  }
+  
+  &__hero {
+    flex: 0 0 50%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: calc(100vh - 120px);
+    max-height: 800px;
+    
+    @include respond-to(mobile) {
+      flex: 0 0 100%;
+      height: 40vh;
+      max-height: 400px;
+    }
+    
+    &-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(118, 132, 252, 0.41); // #7684FC69
+      z-index: 1;
+    }
+    
+    &-content {
+      position: relative;
+      z-index: 2;
+      padding: $spacing-xxl;
+      color: $color-text-white;
+      height: 100%;
+      @include flex(column, center, center);
+      text-align: center;
+    }
+    
+    &-label {
+      @include heading(48px, $font-weight-extra-bold);
+      color: $color-text-white;
+      margin: 0 0 $spacing-sm 0;
+    }
+    
+    &-title {
+      @include heading(48px, $font-weight-extra-bold);
+      color: $color-text-white;
+      margin: 0 0 $spacing-lg 0;
+      text-align: center;
+    }
+    
+    &-info {
+      @include flex(row, space-between, center);
+      width: 100%;
+      max-width: 600px;
+      gap: $spacing-lg;
+    }
+    
+    &-sessions {
+      flex: 1;
+      text-align: left;
+      @include body-text(20px);
+      color: $color-text-white;
+      font-weight: $font-weight-semi-bold;
+      padding-right: $spacing-md;
+      border-right: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    &-price {
+      flex: 0 0 auto;
+      text-align: right;
+      @include body-text(20px);
+      color: $color-text-white;
+      font-weight: $font-weight-semi-bold;
+      padding-left: $spacing-md;
+    }
+  }
+  
+  &__sidebar {
+    flex: 0 0 50%;
+    background-color: $color-bg-light;
+    padding: 0;
+    @include flex(column, flex-start, stretch);
+    justify-content: space-between;
+    
+    @include respond-to(mobile) {
+      flex: 0 0 100%;
+    }
+  }
+  
+  &__section {
+    margin-bottom: 0;
+    padding: 0;
+    
+    &--goals {
+      background-color: $color-bg-light;
+      padding: $spacing-lg;
+      border-radius: 0;
+    }
+    
+    &--who-illustration {
+      background-color: $color-menu;
+      padding: 0;
+      border-radius: 0;
+      flex: 0 0 50%;
+      display: flex;
+      align-items: flex-start;
+      max-height: 250px;
+      
+      @include respond-to(mobile) {
+        flex: 0 0 100%;
+        max-height: 200px;
+      }
+    }
+    
+    &--who-text {
+      background-color: $color-menu;
+      padding: 0;
+      border-radius: 0;
+      flex: 0 0 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-height: 250px;
+      overflow-y: auto;
+      
+      @include respond-to(mobile) {
+        flex: 0 0 100%;
+        max-height: none;
+      }
+      
+      .course-detail__section-title {
+        color: $color-text-white;
+        padding: $spacing-md $spacing-lg 0;
+        margin: 0;
+      }
+      
+      .course-detail__description {
+        color: $color-text-white;
+        padding: $spacing-sm $spacing-lg $spacing-md;
+        margin: 0;
+      }
+    }
+    
+    &-title {
+      @include heading(40px, $font-weight-extra-bold);
+      color: $color-text-primary;
+      margin-bottom: $spacing-md;
+    }
+  }
+  
+  &__who-wrapper {
+    @include flex(row, flex-start, flex-start);
+    gap: 0;
+    align-items: flex-start;
+    margin-top: auto;
+    margin-bottom: 0;
+    background-color: $color-menu;
+    
+    @include respond-to(mobile) {
+      @include flex(column, flex-start, stretch);
+    }
+  }
+  
+  &__goals {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 $spacing-md 0;
+    
+    li {
+      @include body-text();
+      color: $color-text-primary;
+      margin-bottom: $spacing-sm;
+      padding-left: $spacing-md;
+      position: relative;
+      
+      &::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: $color-text-primary;
+        font-size: rem(20);
+        line-height: 1;
+      }
+    }
+  }
+  
+  &__buy-btn {
+    width: 100%;
+    max-width: 200px;
+    margin: $spacing-md auto 0;
+    @include button();
+    display: block;
+  }
+  
+  &__illustration {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    @include flex(column, flex-start, center);
+    max-height: 250px;
+    
+    img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      display: block;
+    }
+    
+    @include respond-to(mobile) {
+      max-height: 200px;
+      
+      img {
+        max-height: 200px;
+      }
+    }
+  }
+  
+  &__description {
+    @include body-text();
+    line-height: 1.8;
+    color: $color-text-primary;
+  }
+}
+

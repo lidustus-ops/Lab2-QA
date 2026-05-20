@@ -1,0 +1,29 @@
+// Button components
+.btn {
+  @include button();
+  
+  &--primary {
+    @include button($color-button-primary, $color-text-white);
+  }
+  
+  &--secondary {
+    @include button($color-button-light, $color-text-primary);
+  }
+  
+  &--small {
+    width: auto;
+    height: auto;
+    padding: $spacing-xs $spacing-md;
+    border-radius: 20px;
+  }
+  
+  &--full-width {
+    width: 100%;
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+

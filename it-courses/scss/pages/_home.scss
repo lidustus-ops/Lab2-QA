@@ -1,0 +1,216 @@
+// Home page styles
+.home {
+  &__hero {
+    position: relative;
+    min-height: 600px;
+    @include flex(column, flex-start, center);
+    background-image: url('/images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    @include respond-to(mobile) {
+      min-height: 100vh;
+      max-height: 100vh;
+    }
+    
+    &-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #7684FC69;
+      z-index: 1;
+    }
+    
+    &-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: $color-text-white;
+      margin-top: $spacing-xxl;
+      flex: 1;
+      @include flex(column, center, center);
+      
+      @include respond-to(mobile) {
+        margin-top: $spacing-lg;
+        padding: $spacing-md;
+      }
+    }
+    
+    &-icon {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto $spacing-lg;
+      fill: $color-text-white;
+      
+      @include respond-to(mobile) {
+        width: 80px;
+        height: 80px;
+      }
+    }
+    
+    &-title {
+      @include heading(64px, $font-weight-extra-bold);
+      color: $color-text-white;
+      margin-bottom: $spacing-md;
+      
+      @include respond-to(mobile) {
+        font-size: rem(32px);
+        font-weight: $font-weight-extra-bold;
+        font-family: $font-heading;
+        color: $color-text-white;
+      }
+    }
+  }
+  
+  &__content {
+    padding: $spacing-xl $spacing-md;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  &__promo {
+    @include flex(row, space-between, flex-start);
+    gap: $spacing-xl;
+    margin-bottom: $spacing-xl;
+    max-width: 100%;
+    
+    &-text {
+      flex: 0 0 25%;
+      max-width: 25%;
+      
+      h2 {
+        margin-bottom: $spacing-md;
+      }
+      
+      @include respond-to(mobile) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+    
+    &-courses {
+      flex: 0 0 70%;
+      max-width: 70%;
+      @include flex(column, flex-start, center);
+      
+      @include respond-to(mobile) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+    
+    @include respond-to(mobile) {
+      @include flex(column, flex-start, stretch);
+      gap: $spacing-lg;
+    }
+  }
+  
+  &__trending {
+    width: 100%;
+    
+    &-title {
+      margin-bottom: $spacing-lg;
+      text-align: center;
+      width: 100%;
+    }
+    
+    &-wrapper {
+      @include flex(column, flex-start, center);
+      gap: $spacing-md;
+      position: relative;
+      width: 100%;
+    }
+    
+    &-controls {
+      @include flex(row, center, center);
+      gap: $spacing-md;
+      width: 100%;
+    }
+    
+    &-nav {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: $spacing-xs;
+      @include flex(column, center, center);
+      flex-shrink: 0;
+      transition: opacity 0.3s ease;
+      
+      &:hover {
+        opacity: 0.7;
+      }
+      
+      &:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+      
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    
+    &-list {
+      @include flex(row, flex-start, stretch);
+      gap: $spacing-md;
+      width: 100%;
+      flex-wrap: nowrap;
+      overflow: hidden;
+      position: relative;
+      
+      .course-card {
+        flex: 0 0 calc(33.333% - 10.67px);
+        min-width: calc(33.333% - 10.67px);
+        
+        @include respond-to(mobile) {
+          flex: 0 0 280px;
+          min-width: 280px;
+        }
+      }
+      
+      @include respond-to(mobile) {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
+    
+    &-indicators {
+      @include flex(row, center, center);
+      gap: $spacing-xs;
+      
+      &-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: rgba(92, 2, 148, 0.3);
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        
+        &:hover {
+          transform: scale(1.2);
+        }
+        
+        &--active {
+          background-color: #5C0294F2;
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,83 @@
+<%- include('../layout', { 
+  title: 'Checkout',
+  headerClass: 'header--catalog',
+  content: `
+  <section class="checkout">
+    <div class="container">
+      <h1 class="checkout__title" data-i18n="checkout.title">Checkout</h1>
+      <form class="checkout__form form" id="checkoutForm" novalidate aria-label="Checkout form">
+        <div class="form__group">
+          <label for="email" class="form__label" data-i18n="checkout.email.label">1. Enter your email</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            class="form__input input-field" 
+            required 
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$"
+            aria-required="true"
+            aria-describedby="email-error"
+            data-i18n-placeholder="checkout.email.placeholder"
+          >
+          <span class="form__error" id="email-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <div class="form__group">
+          <label for="phone" class="form__label" data-i18n="checkout.phone.label">2. Enter your phone number</label>
+          <input 
+            type="tel" 
+            id="phone" 
+            name="phone" 
+            class="form__input input-field" 
+            required 
+            pattern="[+]?[0-9]{10,15}"
+            minlength="10"
+            maxlength="15"
+            aria-required="true"
+            aria-describedby="phone-error"
+            data-i18n-placeholder="checkout.phone.placeholder"
+          >
+          <span class="form__error" id="phone-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <div class="form__group">
+          <label for="courseName" class="form__label" data-i18n="checkout.course.label">3. Enter name of selected course</label>
+          <input 
+            type="text" 
+            id="courseName" 
+            name="courseName" 
+            class="form__input input-field" 
+            required 
+            minlength="3"
+            maxlength="100"
+            aria-required="true"
+            aria-describedby="courseName-error"
+            data-i18n-placeholder="checkout.course.placeholder"
+          >
+          <span class="form__error" id="courseName-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <div class="form__group">
+          <label for="cardNumber" class="form__label" data-i18n="checkout.card.label">4. Enter the card number</label>
+          <input 
+            type="text" 
+            id="cardNumber" 
+            name="cardNumber" 
+            class="form__input input-field" 
+            required 
+            pattern="[0-9]{13,19}"
+            minlength="13"
+            maxlength="19"
+            aria-required="true"
+            aria-describedby="cardNumber-error"
+            data-i18n-placeholder="checkout.card.placeholder"
+          >
+          <span class="form__error" id="cardNumber-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <button type="submit" class="btn btn--primary form__submit" data-i18n="button.pay">Pay</button>
+      </form>
+    </div>
+  </section>
+` }) %>
+

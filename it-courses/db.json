@@ -1,0 +1,92 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "QA engineer",
+      "category": "technical",
+      "duration": "3+ month",
+      "sessions": 40,
+      "sessionsPerWeek": 2,
+      "price": 1800,
+      "rating": 5,
+      "description": "Every time you use a website or an app, you see the result of their work. QA engineers test software and improve its speed by identifying and fixing errors. They also create detailed test plans and automate this process.",
+      "goals": [
+        "Review all main types of testing and project documentation",
+        "Gain practical knowledge of the main stages of quality assurance",
+        "Learn to work with bug-tracking systems",
+        "Learn to test Web services and API"
+      ],
+      "image": "/images/courses/qa-engineer.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Front-end developer",
+      "category": "technical",
+      "duration": "5+ month",
+      "sessions": 40,
+      "sessionsPerWeek": 2,
+      "price": 2200,
+      "rating": 5,
+      "description": "Every time you use a website or an app, you see the result of their work. Front-end developers create visual elements and interfaces, adapt them for different devices, and add animations. They also work with databases.",
+      "goals": [
+        "Learn to interact with servers using JavaScript",
+        "Learn to work with REST APIs",
+        "Learn all the features of the React library",
+        "Master OOP"
+      ],
+      "image": "/images/courses/frontend.jpg"
+    },
+    {
+      "id": 3,
+      "title": "UI/UX designer",
+      "category": "non-technical",
+      "duration": "4+ month",
+      "sessions": 40,
+      "sessionsPerWeek": 2,
+      "price": 1600,
+      "rating": 5,
+      "description": "Every time you use a website or app, you see their work. UI/UX designers create interface designs and make them intuitive. They also adapt designs for different devices and conduct user research to improve their solutions.",
+      "goals": [
+        "Learn to solve user problems using CJM maps",
+        "Learn to create design systems",
+        "Learn to design mobile app interfaces for Android and iOS",
+        "Learn to create UX and UI design based on data"
+      ],
+      "image": "/images/courses/ui-ux.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Data Analyst",
+      "category": "non-technical",
+      "duration": "4+ month",
+      "sessions": 40,
+      "sessionsPerWeek": 2,
+      "price": 1750,
+      "rating": 5,
+      "description": "Every time you use a website or app, a data analyst collects and analyzes data to improve your experience. They create reports that help businesses make informed decisions. They use various tools and techniques to analyze trends.",
+      "goals": [
+        "Teach students to use SQL, Python, and Power BI to analyze data and solve practical problems.",
+        "Give them the chance to practice through real tasks that strengthen their knowledge and build experience."
+      ],
+      "image": "/images/courses/data-analyst.jpg"
+    }
+  ],
+  "orders": [
+    {
+      "email": "zheniapravdenko@gmail.com",
+      "phone": "0958102194",
+      "courseName": "QA engineer",
+      "cardNumber": "123412346690124793",
+      "createdAt": "2025-12-07T19:47:50.809Z",
+      "id": 1
+    },
+    {
+      "email": "zheniapravdenko@gmail.com",
+      "phone": "0958102194",
+      "courseName": "QA engineer",
+      "cardNumber": "12341234667989",
+      "createdAt": "2025-12-07T19:48:58.460Z",
+      "id": 2
+    }
+  ]
+}

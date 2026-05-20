@@ -1,0 +1,57 @@
+<%- include('../layout', { 
+  title: 'Course Details',
+  headerClass: 'header--catalog',
+  content: `
+  <article class="course-detail" id="courseDetail" itemscope itemtype="https://schema.org/Course">
+    <div class="course-detail__container">
+      <div class="course-detail__hero" id="courseImage" style="background-image: url('/images/course-info.jpg');">
+        <div class="course-detail__hero-overlay"></div>
+        <div class="course-detail__hero-content">
+          <p class="course-detail__hero-label">Course:</p>
+          <h1 class="course-detail__hero-title" itemprop="name" id="courseTitle">Course Title</h1>
+          <div class="course-detail__hero-info">
+            <span class="course-detail__hero-sessions" id="courseSessionsInfo">40 sessions (2 sessions per week)</span>
+            <span class="course-detail__hero-price" id="coursePrice" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+              <span itemprop="price" id="coursePriceValue">$0</span>
+              <meta itemprop="priceCurrency" content="USD">
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="course-detail__sidebar">
+        <section class="course-detail__section course-detail__section--goals">
+          <h2 class="course-detail__section-title">Course Goals:</h2>
+          <ul class="course-detail__goals" id="courseGoals" itemprop="teaches">
+            <!-- Goals will be loaded via JavaScript -->
+          </ul>
+          <button class="course-detail__buy-btn btn btn--primary" id="buyButton">Buy</button>
+        </section>
+        <div class="course-detail__who-wrapper">
+          <section class="course-detail__section course-detail__section--who-illustration">
+            <div class="course-detail__illustration" id="courseIllustration" aria-hidden="true">
+              <!-- Illustration will be loaded -->
+            </div>
+          </section>
+          <section class="course-detail__section course-detail__section--who-text">
+            <h2 class="course-detail__section-title" id="whoIsTitle">Who is <span id="whoIsTitleCourse"></span>?</h2>
+            <p class="course-detail__description" id="courseDescription" itemprop="description">
+              <!-- Description will be loaded via JavaScript -->
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </article>
+`,
+  schema: {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Course",
+    "description": "IT Course",
+    "provider": {
+      "@type": "Organization",
+      "name": "IT Courses"
+    }
+  }
+}) %>
+

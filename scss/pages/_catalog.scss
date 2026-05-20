@@ -1,0 +1,64 @@
+// Catalog page styles
+.catalog {
+  padding: $spacing-xl $spacing-md;
+  background-color: $color-bg-light;
+  min-height: 100vh;
+  
+  &__header {
+    text-align: center;
+    padding: $spacing-lg 0;
+    margin-bottom: $spacing-xl;
+    
+    &-title {
+      @include heading(40px, $font-weight-extra-bold);
+      color: $color-text-primary;
+      margin: 0 0 $spacing-md 0;
+    }
+    
+    &-subtitle {
+      @include body-text();
+      color: $color-text-primary;
+      margin: 0;
+      font-weight: $font-weight-regular;
+    }
+  }
+  
+  &__categories {
+    @include flex(row, space-between, flex-start);
+    gap: $spacing-lg;
+    margin-bottom: $spacing-lg;
+    
+    @include respond-to(mobile) {
+      @include flex(column, flex-start, stretch);
+    }
+  }
+  
+  &__category {
+    flex: 0 0 50%;
+    width: 50%;
+    
+    @include respond-to(mobile) {
+      flex: 0 0 100%;
+      width: 100%;
+    }
+    
+    &-title {
+      @include subheading();
+      color: $color-text-primary;
+      margin-bottom: $spacing-lg;
+      text-align: center;
+      font-weight: $font-weight-extra-bold;
+    }
+  }
+  
+  &__courses {
+    @include flex(row, flex-start, stretch);
+    gap: $spacing-lg;
+    flex-wrap: nowrap;
+    
+    @include respond-to(mobile) {
+      @include flex(column, flex-start, stretch);
+    }
+  }
+}
+

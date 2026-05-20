@@ -1,0 +1,39 @@
+// Footer styles
+.footer {
+  background-color: #7892D3;
+  padding: $spacing-lg $spacing-md;
+  
+  &__contact {
+    @include flex(row, space-between, center);
+    width: 100%;
+    
+    @include respond-to(mobile) {
+      @include flex(column, center, center);
+      gap: $spacing-md;
+    }
+  }
+  
+  &__icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+  
+  &__item {
+    @include flex(row, center, center);
+    gap: $spacing-xs;
+    @include small-text();
+    color: $color-text-primary;
+    
+    a {
+      color: $color-text-primary;
+    }
+  }
+  
+  @include respond-to(mobile) {
+    padding: $spacing-md $spacing-sm;
+    @include flex(column, center, center);
+    gap: $spacing-md;
+  }
+}
+

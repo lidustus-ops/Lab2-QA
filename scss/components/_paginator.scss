@@ -1,0 +1,56 @@
+// Paginator styles
+.paginator {
+  margin: $spacing-xl 0;
+  
+  &__list {
+    @include flex(row, center, center);
+    gap: $spacing-xs;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  &__item {
+    &--ellipsis {
+      padding: $spacing-xs $spacing-sm;
+      color: $color-text-primary;
+    }
+  }
+  
+  &__button {
+    @include button-text(16px);
+    padding: $spacing-xs $spacing-sm;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: $color-text-white;
+    color: $color-text-primary;
+    border: 1px solid $color-text-primary;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover:not(.disabled) {
+      background-color: $color-button-primary;
+      color: $color-text-white;
+      border-color: $color-button-primary;
+    }
+    
+    &.active {
+      background-color: $color-button-primary;
+      color: $color-text-white;
+      border-color: $color-button-primary;
+      font-weight: $font-weight-semi-bold;
+    }
+    
+    &.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    &:focus {
+      outline: 2px solid $color-text-primary;
+      outline-offset: 2px;
+    }
+  }
+}
+

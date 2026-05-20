@@ -1,0 +1,38 @@
+<%- include('../layout', { 
+  title: 'IT Courses Catalog',
+  headerClass: 'header--catalog',
+  content: `
+  <section class="catalog">
+    <div class="container">
+      <header class="catalog__header">
+        <h1 class="catalog__header-title" data-i18n="catalog.title">IT Courses Catalog</h1>
+        <p class="catalog__header-subtitle" data-i18n="catalog.subtitle">Start learning today and take your IT career to the next level.</p>
+      </header>
+
+      <div class="catalog__categories">
+        <section class="catalog__category" id="technicalSection">
+          <h2 class="catalog__category-title" data-i18n="catalog.category.technical">Technical</h2>
+          <div class="catalog__courses" id="technicalCourses" role="list" aria-label="Technical courses">
+            <!-- Courses will be loaded via JavaScript -->
+          </div>
+        </section>
+
+        <section class="catalog__category" id="nonTechnicalSection">
+          <h2 class="catalog__category-title" data-i18n="catalog.category.nonTechnical">Non-technical</h2>
+          <div class="catalog__courses" id="nonTechnicalCourses" role="list" aria-label="Non-technical courses">
+            <!-- Courses will be loaded via JavaScript -->
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+`,
+  schema: {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "IT Courses Catalog",
+    "description": "Browse our collection of IT courses",
+    "url": "http://localhost:3000/catalog"
+  }
+}) %>
+

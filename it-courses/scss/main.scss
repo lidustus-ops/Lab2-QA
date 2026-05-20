@@ -1,0 +1,39 @@
+// Main SCSS file - Architecture 7-1
+
+// 1. Abstracts
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+
+// 2. Base
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/utilities';
+
+// 3. Layout
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/grid';
+@import 'layout/container';
+
+// 4. Components
+@import 'components/buttons';
+@import 'components/course-card';
+@import 'components/forms';
+@import 'components/menu';
+@import 'components/statistics';
+@import 'components/paginator';
+
+// 5. Pages
+@import 'pages/home';
+@import 'pages/catalog';
+@import 'pages/course-detail';
+@import 'pages/checkout';
+@import 'pages/checkout';
+
+// 6. Themes
+@import 'themes/default';
+
+// 7. Vendors (if needed)
+// @import 'vendors/normalize';
+

@@ -1,0 +1,61 @@
+// Color Variables
+$color-text-primary: #5C0294F2;
+$color-text-white: #FFFFFF;
+$color-bg-light: #DDF3FF;
+$color-menu: #7892D3;
+$color-button-primary: #5C0294F2;
+$color-button-hover: #5C0294F2;
+$color-button-light: #5C029440;
+$color-card-primary: #5C0294F2;
+$color-card-secondary: #9370DB;
+$color-header-info: #D8BFD8;
+
+// Typography
+$font-heading: 'Inter', sans-serif;
+$font-body: 'Roboto', sans-serif;
+
+$font-weight-extra-bold: 800;
+$font-weight-semi-bold: 600;
+$font-weight-medium: 500;
+$font-weight-regular: 400;
+
+$font-size-heading: 40px;
+$font-size-subheading: 36px;
+$font-size-card-title: 20px;
+$font-size-body: 20px;
+$font-size-small: 11px;
+$font-size-button: 20px;
+
+// Spacing
+$spacing-xs: 8px;
+$spacing-sm: 16px;
+$spacing-md: 24px;
+$spacing-lg: 32px;
+$spacing-xl: 48px;
+$spacing-xxl: 64px;
+
+// Breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+// Button
+$button-width: 230px;
+$button-height: 54px;
+$button-radius: 40px;
+
+// Input
+$input-width: 480px;
+$input-height: 41px;
+$input-border-color: $color-text-primary;
+$input-bg: $color-text-white;
+
+// Course Card
+$card-width: 356px;
+$card-height: 184px;
+$card-radius: 20px;
+
+// Grid
+$grid-columns: 12;
+$grid-gutter: 20px;
+

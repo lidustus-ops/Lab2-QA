@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="<%= typeof description !== 'undefined' ? description : 'IT Courses platform - learn programming and design' %>">
+  <title><%= typeof title !== 'undefined' ? title : 'IT Courses' %></title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <!-- Schema.org structured data -->
+  <% if (typeof schema !== 'undefined' && schema) { %>
+    <script type="application/ld+json">
+      <%= JSON.stringify(schema) %>
+    </script>
+  <% } %>
+</head>
+<body>
+  <%- include('partials/header', { headerClass: typeof headerClass !== 'undefined' ? headerClass : '' }) %>
+  <%- include('partials/menu') %>
+  
+  <main role="main">
+    <%- typeof content !== 'undefined' ? content : '' %>
+  </main>
+  
+  <%- include('partials/footer') %>
+  
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/js/utils/i18n.js"></script>
+  <script src="/js/utils/cache.js"></script>
+  <script src="/js/api/http.js"></script>
+  <script src="/js/utils/router.js"></script>
+  <script src="/js/services/CourseService.js"></script>
+  <script src="/js/services/OrderService.js"></script>
+  <script src="/js/components/Paginator.js"></script>
+  <script src="/js/components/Menu.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
+

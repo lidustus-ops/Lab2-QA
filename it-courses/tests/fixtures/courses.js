@@ -1,0 +1,43 @@
+const sampleCourses = [
+  {
+    id: 1,
+    title: 'QA engineer',
+    category: 'technical',
+    duration: '3+ month',
+    sessions: 40,
+    sessionsPerWeek: 2,
+    price: 1800,
+    rating: 5,
+    description: 'QA description',
+    goals: ['Testing'],
+    image: '/images/courses/qa-engineer.jpg',
+  },
+  {
+    id: 2,
+    title: 'Front-end developer',
+    category: 'technical',
+    duration: '5+ month',
+    sessions: 40,
+    sessionsPerWeek: 2,
+    price: 2200,
+    rating: 5,
+    description: 'Frontend description',
+    goals: ['React'],
+    image: '/images/courses/frontend.jpg',
+  },
+  {
+    id: 3,
+    title: 'UI/UX designer',
+    category: 'non-technical',
+    duration: '4+ month',
+    sessions: 40,
+    sessionsPerWeek: 2,
+    price: 1600,
+    rating: 5,
+    description: 'Design description',
+    goals: ['UX'],
+    image: '/images/courses/ui-ux.jpg',
+  },
+];
+
+module.exports = { sampleCourses };

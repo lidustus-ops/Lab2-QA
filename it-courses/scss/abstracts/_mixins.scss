@@ -1,0 +1,229 @@
+// Mixins
+@use "sass:math";
+
+// Flexbox
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+// Grid
+@mixin grid($columns: 1, $gap: 0) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+// Container
+@mixin container($max-width: 1200px, $padding: $spacing-md) {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $padding;
+}
+
+// Typography
+@mixin typography($size, $weight: $font-weight-regular, $line-height: 1.5) {
+  font-size: rem($size);
+  font-weight: $weight;
+  line-height: $line-height;
+}
+
+@mixin heading($size: $font-size-heading, $weight: $font-weight-extra-bold) {
+  font-family: $font-heading;
+  @include typography($size, $weight);
+  color: $color-text-primary;
+}
+
+@mixin subheading($size: $font-size-subheading, $weight: $font-weight-semi-bold) {
+  font-family: $font-heading;
+  @include typography($size, $weight);
+  color: $color-text-primary;
+}
+
+@mixin body-text($size: $font-size-body, $weight: $font-weight-regular) {
+  font-family: $font-body;
+  @include typography($size, $weight);
+  color: $color-text-primary;
+}
+
+@mixin card-title($size: $font-size-card-title, $weight: $font-weight-semi-bold) {
+  font-family: $font-body;
+  @include typography($size, $weight);
+}
+
+@mixin button-text($size: $font-size-button, $weight: $font-weight-medium) {
+  font-family: $font-body;
+  @include typography($size, $weight);
+}
+
+@mixin small-text($size: $font-size-small, $weight: $font-weight-semi-bold) {
+  font-family: $font-heading;
+  @include typography($size, $weight);
+}
+
+// Responsive
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: $breakpoint-mobile - 1px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet - 1px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media (min-width: $breakpoint-desktop) {
+      @content;
+    }
+  } @else if $breakpoint == tablet-up {
+    @media (min-width: $breakpoint-mobile) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-up {
+    @media (min-width: $breakpoint-desktop) {
+      @content;
+    }
+  }
+}
+
+// Custom Grid System
+@mixin make-container($gutter: $grid-gutter) {
+  width: 100%;
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin make-row($gutter: $grid-gutter) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: math.div(-$gutter, 2);
+  margin-right: math.div(-$gutter, 2);
+}
+
+@mixin make-col($size: 1, $columns: $grid-columns, $gutter: $grid-gutter) {
+  flex: 0 0 math.percentage(math.div($size, $columns));
+  max-width: math.percentage(math.div($size, $columns));
+  padding-left: math.div($gutter, 2);
+  padding-right: math.div($gutter, 2);
+}
+
+// Button
+@mixin button($bg: $color-button-primary, $color: $color-text-white, $hover-bg: $color-button-hover) {
+  @include button-text();
+  width: $button-width;
+  height: $button-height;
+  border-radius: $button-radius;
+  background-color: $bg;
+  color: $color;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: $hover-bg;
+  }
+  
+  &:focus {
+    outline: 2px solid $color-text-primary;
+    outline-offset: 2px;
+  }
+}
+
+// Input
+@mixin input($width: $input-width, $height: $input-height) {
+  width: $width;
+  height: $height;
+  background-color: $input-bg;
+  border: 1px solid $input-border-color;
+  padding: 0 $spacing-sm;
+  @include body-text();
+  
+  &:focus {
+    outline: 2px solid $color-text-primary;
+    outline-offset: 2px;
+  }
+}
+
+// Card
+@mixin card($width: $card-width, $height: $card-height, $radius: $card-radius) {
+  width: $width;
+  height: $height;
+  border-radius: $radius;
+  overflow: hidden;
+}
+
+// Animations
+@mixin fade-in($duration: 0.3s) {
+  animation: fadeIn $duration ease-in;
+}
+
+@mixin slide-in($direction: left, $duration: 0.3s) {
+  @if $direction == left {
+    animation: slideInLeft $duration ease-out;
+  } @else if $direction == right {
+    animation: slideInRight $duration ease-out;
+  } @else if $direction == up {
+    animation: slideInUp $duration ease-out;
+  } @else if $direction == down {
+    animation: slideInDown $duration ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+

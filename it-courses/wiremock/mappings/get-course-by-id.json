@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/courses/1"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": 1,
+      "title": "QA engineer",
+      "category": "technical",
+      "duration": "3+ month",
+      "sessions": 40,
+      "sessionsPerWeek": 2,
+      "price": 1800,
+      "rating": 5,
+      "description": "QA course",
+      "goals": ["Testing"],
+      "image": "/images/courses/qa-engineer.jpg"
+    }
+  }
+}

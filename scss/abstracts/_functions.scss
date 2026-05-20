@@ -1,0 +1,23 @@
+// Functions
+
+// Convert px to rem
+@use "sass:math";
+@function rem($pixels, $base: 16) {
+  @return #{math.div($pixels, $base)}rem;
+}
+
+// Convert px to em
+@function em($pixels, $base: 16) {
+  @return #{math.div($pixels, $base)}em;
+}
+
+// Color mix function (fallback for older browsers)
+@function color-mix($color1, $color2, $weight: 50%) {
+  @return mix($color1, $color2, $weight);
+}
+
+// Get color with opacity
+@function rgba-color($color, $opacity) {
+  @return rgba($color, $opacity);
+}
+

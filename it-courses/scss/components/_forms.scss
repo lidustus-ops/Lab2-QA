@@ -1,0 +1,47 @@
+// Form components
+.form {
+  @include flex(column, flex-start, stretch);
+  gap: $spacing-md;
+  
+  &__group {
+    @include flex(column, flex-start, stretch);
+    gap: $spacing-xs;
+  }
+  
+  &__label {
+    @include body-text();
+    color: $color-text-primary;
+  }
+  
+  &__input {
+    @include input();
+    
+    &--error {
+      border-color: #ff0000;
+    }
+  }
+  
+  &__error {
+    @include small-text();
+    color: #ff0000;
+    margin-top: -$spacing-xs;
+  }
+  
+  &__submit {
+    @include button();
+    margin-top: $spacing-md;
+  }
+}
+
+.input-field {
+  @include input();
+  
+  &--full-width {
+    width: 100%;
+  }
+  
+  &--error {
+    border-color: #ff0000;
+  }
+}
+

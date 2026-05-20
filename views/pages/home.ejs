@@ -1,0 +1,80 @@
+<%- include('../layout', { 
+  title: 'IT Courses - Home',
+  headerClass: 'header--home',
+  content: `
+  <section class="home__hero" role="banner" aria-label="Hero section">
+    <div class="home__hero-overlay"></div>
+    <div class="home__hero-content">
+      <svg class="home__hero-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" fill="currentColor"/>
+      </svg>
+      <h1 class="home__hero-title">IT Courses</h1>
+    </div>
+    <div class="statistics" role="region" aria-label="Statistics">
+      <div class="statistics__item">
+        <img src="/images/teachers.svg" alt="Teachers icon" class="statistics__icon" aria-hidden="true">
+        <div class="statistics__text">
+          <div class="statistics__number">100+</div>
+          <div class="statistics__label">teachers</div>
+        </div>
+      </div>
+      <div class="statistics__item">
+        <img src="/images/satisfied-students.svg" alt="Satisfied students icon" class="statistics__icon" aria-hidden="true">
+        <div class="statistics__text">
+          <div class="statistics__number">95%</div>
+          <div class="statistics__label">satisfied students</div>
+        </div>
+      </div>
+      <div class="statistics__item">
+        <img src="/images/courses.svg" alt="Courses icon" class="statistics__icon" aria-hidden="true">
+        <div class="statistics__text">
+          <div class="statistics__number">100%</div>
+          <div class="statistics__label">up-to-date courses</div>
+        </div>
+      </div>
+      <div class="statistics__item">
+        <img src="/images/students-per-year.svg" alt="Students per year icon" class="statistics__icon" aria-hidden="true">
+        <div class="statistics__text">
+          <div class="statistics__number">1500+</div>
+          <div class="statistics__label">students annually</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home__content">
+    <div class="container">
+      <div class="home__promo">
+        <article class="home__promo-text">
+          <h2>Looking to level up your IT skills?</h2>
+          <p>Practical courses and real projects designed to boost your career with IT Courses.</p>
+        </article>
+        <aside class="home__promo-courses">
+          <h2>Trending courses:</h2>
+          <div class="home__trending-wrapper">
+            <div class="home__trending-list" id="trendingCourses" role="list" aria-label="Trending courses">
+              <!-- Courses will be loaded via JavaScript -->
+            </div>
+            <div class="home__trending-controls">
+              <button class="home__trending-nav home__trending-nav--prev" aria-label="Previous course" id="trendingPrev">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 18L9 12L15 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="home__trending-indicators" id="trendingIndicators" role="tablist" aria-label="Course indicators">
+                <!-- Indicators will be loaded via JavaScript -->
+              </div>
+              <button class="home__trending-nav home__trending-nav--next" aria-label="Next course" id="trendingNext">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 18L15 12L9 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+`
+}) %>
+

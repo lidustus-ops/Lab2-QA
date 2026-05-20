@@ -1,0 +1,85 @@
+// Statistics section
+.statistics {
+  background-color: #AB5EFDBA;
+  padding: $spacing-lg $spacing-xl;
+  @include flex(row, space-around, center);
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 100%;
+  
+  &__item {
+    @include flex(row, flex-start, center);
+    gap: $spacing-md;
+  }
+  
+  &__icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+  }
+  
+  &__text {
+    @include flex(column, flex-start, flex-start);
+    color: #000000;
+  }
+  
+  &__number {
+    @include heading(24px, $font-weight-extra-bold);
+    color: #000000;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  
+  &__label {
+    @include body-text(16px, $font-weight-regular);
+    color: #000000;
+    line-height: 1.2;
+  }
+  
+  @include respond-to(mobile) {
+    @include flex(row, space-around, center);
+    gap: $spacing-xs;
+    padding: $spacing-sm $spacing-xs;
+    flex-wrap: nowrap;
+    
+    &__item {
+      @include flex(column, center, center);
+      flex: 0 0 auto;
+      gap: $spacing-xs;
+      text-align: center;
+      max-width: calc(25% - #{$spacing-xs});
+    }
+    
+    &__icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+    
+    &__text {
+      @include flex(column, center, center);
+      gap: 0;
+      width: 100%;
+      text-align: center;
+    }
+    
+    &__number {
+      font-size: rem(14px);
+      line-height: 1.2;
+      margin-bottom: 2px;
+      word-break: break-word;
+      text-align: center;
+    }
+    
+    &__label {
+      font-size: rem(9px);
+      line-height: 1.2;
+      word-break: break-word;
+      white-space: normal;
+      hyphens: auto;
+      text-align: center;
+    }
+  }
+}
+

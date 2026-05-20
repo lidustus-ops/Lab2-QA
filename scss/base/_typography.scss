@@ -1,0 +1,28 @@
+// Typography base styles
+
+h1, h2, h3, h4, h5, h6 {
+  @include heading();
+  margin-bottom: $spacing-md;
+}
+
+h1 {
+  @include heading($font-size-heading, $font-weight-extra-bold);
+}
+
+h2 {
+  @include subheading($font-size-subheading, $font-weight-semi-bold);
+}
+
+h3 {
+  @include heading(28px, $font-weight-semi-bold);
+}
+
+p {
+  @include body-text();
+  margin-bottom: $spacing-sm;
+}
+
+small {
+  @include small-text();
+}
+

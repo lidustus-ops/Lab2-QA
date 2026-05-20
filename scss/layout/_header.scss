@@ -1,0 +1,144 @@
+// Header styles
+.header {
+  background-color: transparent;
+  padding: $spacing-sm $spacing-md;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 $spacing-xl;
+    
+    @include respond-to(mobile) {
+      padding: 0 $spacing-sm;
+    }
+  }
+  
+  &__content {
+    @include flex(row, space-between, center);
+    width: 100%;
+  }
+  
+  &__nav {
+    @include flex(row, flex-end, center);
+  }
+  
+  &__menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 64px;
+    height: 64px;
+    @include flex(column, center, center);
+    
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+    
+    &:focus {
+      outline: 2px solid $color-text-white;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  
+  &__signup {
+    width: 108px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: $color-button-primary;
+    color: $color-text-white;
+    border: none;
+    cursor: pointer;
+    @include flex(row, center, center);
+    font-family: $font-heading;
+    font-weight: $font-weight-extra-bold;
+    font-size: 24px;
+    line-height: 100%;
+    text-align: center;
+    transition: opacity 0.3s ease;
+    
+    &:hover {
+      opacity: 0.9;
+    }
+    
+    &:focus {
+      outline: 2px solid $color-text-white;
+      outline-offset: 2px;
+    }
+  }
+  
+  &__profile-icon {
+    width: 64px;
+    height: 64px;
+    @include flex(column, center, center);
+    color: $color-text-white;
+    text-decoration: none;
+    display: flex;
+    
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+    
+    &:hover {
+      opacity: 0.8;
+    }
+    
+    &:focus {
+      outline: 2px solid $color-text-white;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+  }
+  
+  // Catalog header variant
+  &--catalog {
+    background-color: #5C029440;
+    position: relative;
+    padding: $spacing-sm $spacing-md;
+    
+    .header__menu-toggle svg rect {
+      fill: $color-text-white;
+    }
+    
+    .header__content {
+      @include flex(row, space-between, center);
+    }
+    
+    .header__nav {
+      @include flex(row, flex-end, center);
+    }
+  }
+  
+  @include respond-to(mobile) {
+    padding: $spacing-xs $spacing-sm;
+    
+    &__content {
+      @include flex(row, flex-start, center);
+    }
+    
+    &__menu-toggle {
+      flex: 0 0 auto;
+    }
+    
+    &__nav {
+      flex: 0 0 auto;
+    }
+    
+    &__logo {
+      font-size: rem(18);
+    }
+  }
+}
+

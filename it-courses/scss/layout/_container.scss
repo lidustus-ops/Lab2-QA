@@ -1,0 +1,22 @@
+// Container
+.container {
+  @include container();
+  max-width: 100%;
+  
+  @include respond-to(mobile) {
+    padding: 0 $spacing-sm;
+  }
+}
+
+// Full width container for home page
+.home .container {
+  max-width: 100%;
+  width: 100%;
+  padding: 0 $spacing-xl;
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 0 $spacing-md;
+}
+
